@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.bbongnamu.core.dao.HistoryMapper">
+
+	<insert id="insertHistory" parameterType="history">
+		insert into tbl_history(
+			num,
+			wikinum,
+			usernum,
+			explanation,
+			type,
+			content
+			<if test="revertnum!=0">
+			,revertnum
+			</if>
+		)values(
+			seq_history.nextval,
+			#{wikinum},
+			#{usernum},
+			#{explanation},
+			#{type},
+			#{content}
+			<if test="revertnum!=0">
+			,#{revertnum}
+			</if>
+		)
+	</insert>
+	
+	
+	<select id="selectHistory" resultType="history">
+		select *
+		from tbl_history
+		where num = #{num}
+	</select>
+
+	<select id="selectCountByWikinum" resultType="int">
+		select count(*)
+		from tbl_history
+		where wikinum = #{wikinum}
+	</select>
+
+	<select id="selectHistoriesByWikinum" resultType="history">
+		select *
+		from tbl_history
+		where wikinum = #{wikinum}
+		order by num desc
+	</select>
+
+	<select id="selectRecentHistoryByWikinum" resultType="history">
+		select *
+		from (
+			select *
+			from tbl_history
+			where wikinum = #{wikinum}
+			order by num desc
+		)
+		where rownum = 1
+	</select>
+
+	<select id="selectRecentHistories" resultType="history">
+	<![CDATA[
+		select *
+		from (
+			select wikinum, max(writedate) as writedate
+			from tbl_history
+			group by wikinum
+			order by writedate desc
+		)
+		where rownum <= 10
+	]]>
+	</select>
+
+</mapper>

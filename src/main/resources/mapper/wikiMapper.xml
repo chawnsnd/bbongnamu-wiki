@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.bbongnamu.core.dao.WikiMapper">
+
+	<insert id="insertWiki" parameterType="wiki">
+		insert into tbl_wiki(
+			num,
+			title
+		)values(
+			#{num},
+			#{title}
+		)
+	</insert>
+		
+	<select id="selectNextSeq" resultType="int">
+		select seq_wiki.nextval from dual
+	</select>
+	
+	<select id="selectWiki" resultType="wiki">
+		select *
+		from tbl_wiki
+		where num = #{num}
+	</select>
+
+	<select id="selectCountByTitle" resultType="int">
+		select count(*)
+		from tbl_wiki
+		where title like '%'||#{title}||'%'
+	</select>
+
+	<select id="selectWikiByTitle" resultType="wiki">
+		select *
+		from tbl_wiki
+		where title = #{title}
+	</select>
+
+	<select id="selectWikisByTitle" resultType="wiki">
+		select *
+		from tbl_wiki
+		where title like '%'||#{title}||'%'
+	</select>
+
+	<select id="selectRandomWiki" resultType="wiki">
+		select *
+		from (
+			select * 
+			from tbl_wiki
+			order by dbms_random.value
+		)
+		where rownum = 1
+	</select>
+
+</mapper>

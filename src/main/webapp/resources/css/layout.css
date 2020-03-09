@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	background-color: #eaeaea;
+}
+
+header{
+	padding: 5px 0px;
+	background-color: palevioletred;
+	color: white;
+	border-bottom: 5px solid plum;
+}
+
+main{
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	background-color: white;
+	max-width: 1300px;
+	padding: 24px;
+	margin: 0 auto;
+	min-height: 1000px;
+	display: flex;
+}
+aside{
+	max-width: 220px;
+	border-right: 1px solid #ccc;
+	padding-right: 24px;
+}
+
+article{
+	width: 1020px;
+	padding-left: 24px;
+}
+
+footer{
+	font-size: 12px;
+	text-align: center;
+	background-color: white;
+	border-top: 1px solid #ccc;
+}

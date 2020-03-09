@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="wiki.bbongnamu.core.vo.User" alias="user"/>
+		<typeAlias type="wiki.bbongnamu.core.vo.Wiki" alias="wiki"/>
+		<typeAlias type="wiki.bbongnamu.core.vo.History" alias="history"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/userMapper.xml"/>
+		<mapper resource="mapper/wikiMapper.xml"/>
+		<mapper resource="mapper/historyMapper.xml"/>
+	</mappers>
+</configuration>

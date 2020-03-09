@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.pointer{
+	cursor: pointer;
+}
+.underline:hover{
+	text-decoration: underline;
+}
+.right{
+	float: right;
+}
+
+.b500{
+	font-weight: 500;
+}
+.b600{
+	font-weight: 600;
+}
+.b700{
+	font-weight: 700;
+}
+.b800{
+	font-weight: 800;
+}
+
+/* 버튼 */
+.btn_group{
+	display:inline-flex;
+}
+.btn_group.nav{
+	display:flex;
+}
+.btn_group > input[type='submit'], button{
+	flex: 1;
+}
+input[type='submit'], button, .btn{
+	border: 2px solid #e7e7e7;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	outline: 0px;
+	padding: 6px 10px;
+}
+
+input[type='submit']:hover, button:hover, .btn:hover{
+	background-color: #e7e7e7;
+	
+}
+
+input[type='submit'].fill, button.fill, .btn.fill{
+	background-color: #e7e7e7;
+	
+}
+
+input[type='submit'].active, button.active, .btn.active{
+	border: 2px solid gray;
+}
+
+input[type='submit'].disabled, button.disabled, .btn.disabled{
+	cursor: not-allowed;
+	color: gray;
+}
+
+input[type='submit'].green, button.green, .btn.green{
+  border-color: #4CAF50;
+  color: green;
+}
+
+input[type='submit'].green.fill, button.green.fill, .btn.green.fill{
+  background-color: #4CAF50;
+  color: white;
+}
+
+input[type='submit'].green:hover, button.green:hover, .btn.green:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+input[type='submit'].blue, button.blue, .btn.blue {
+  border-color: #2196F3;
+  color: dodgerblue;
+}
+
+input[type='submit'].blue.fill, button.blue.fill, .btn.blue.fill {
+  background: #2196F3;
+  color: white;
+}
+
+input[type='submit'].blue:hover, button.blue:hover, .btn.blue:hover {
+  background: #2196F3;
+  color: white;
+}
+
+input[type='submit'].orange.fill, button.orange.fill, .btn.orange.fill {
+  border-color: #ff9800;
+  color: orange;
+}
+
+input[type='submit'].orange, button.orange, .btn.orange {
+  border-color: #ff9800;
+  color: orange;
+}
+
+input[type='submit'].orange, button.orange:hover, .btn.orange:hover {
+  background: #ff9800;
+  color: white;
+}
+
+input[type='submit'].red, button.red, .btn.red {
+  border-color: #f44336;
+  color: red
+}
+
+input[type='submit'].red.fill, button.red.fill, .btn.red.fill {
+  background: #f44336;
+  color: white;
+}
+
+input[type='submit'].red:hover, button.red:hover, .btn.red:hover {
+  background: #f44336;
+  color: white;
+}
