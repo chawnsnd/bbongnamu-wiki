@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <header>
 <script type="text/javascript" src="../resources/js/jquery-3.4.1.min.js"></script>
-<link href="../resources/css/layout.css" type="text/css" rel="stylesheet">
-<link href="../resources/css/element.css" type="text/css" rel="stylesheet">
+<link href="<c:url value='/resources/css/layout.css'/>" type="text/css" rel="stylesheet">
+<link href="<c:url value='/resources/css/element.css'/>" type="text/css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/74fba7f134.js"crossorigin="anonymous"></script>
 <script>
 function checkHeaderSearch(){
